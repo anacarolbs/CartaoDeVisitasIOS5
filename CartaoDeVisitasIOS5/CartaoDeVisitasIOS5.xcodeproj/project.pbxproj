@@ -57,9 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				8ECE28672C2277FD004DE17F /* View */,
-				8ECE28662C2277F5004DE17F /* Resources */,
 				8ECE28652C2277E8004DE17F /* Application */,
 				8ECE28682C227823004DE17F /* Controllers */,
+				8ECE28512C227436004DE17F /* AppDelegate.swift */,
+				8ECE28532C227436004DE17F /* SceneDelegate.swift */,
+				8ECE285F2C227438004DE17F /* Info.plist */,
+				8ECE285A2C227438004DE17F /* Assets.xcassets */,
 			);
 			path = CartaoDeVisitasIOS5;
 			sourceTree = "<group>";
@@ -67,19 +70,8 @@
 		8ECE28652C2277E8004DE17F /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				8ECE28512C227436004DE17F /* AppDelegate.swift */,
-				8ECE28532C227436004DE17F /* SceneDelegate.swift */,
-				8ECE285F2C227438004DE17F /* Info.plist */,
 			);
 			path = Application;
-			sourceTree = "<group>";
-		};
-		8ECE28662C2277F5004DE17F /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8ECE285A2C227438004DE17F /* Assets.xcassets */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		8ECE28672C2277FD004DE17F /* View */ = {

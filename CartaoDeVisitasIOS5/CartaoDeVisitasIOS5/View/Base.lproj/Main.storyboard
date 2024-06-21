@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppO-6p-tVd">
-                                <rect key="frame" x="20" y="728" width="167" height="50"/>
+                            <button clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppO-6p-tVd">
+                                <rect key="frame" x="20" y="728" width="166" height="50"/>
                                 <color key="backgroundColor" red="0.32549019607843138" green="0.42745098039215684" blue="0.99607843137254903" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="52" id="DzU-Hz-0lT"/>
                                     <constraint firstAttribute="height" constant="50" id="Xii-Ox-Loc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Cadastre-se"/>
@@ -35,17 +36,52 @@
                                     <constraint firstAttribute="width" constant="52" id="bab-r8-udf"/>
                                     <constraint firstAttribute="height" constant="50" id="qkH-d4-GI8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Entrar"/>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="afp-Ge-iBa">
+                                <rect key="frame" x="20" y="134" width="341" height="574"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="rOL-BI-DbO">
+                                    <size key="itemSize" width="341" height="583"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sDx-HB-b4E">
+                                        <rect key="frame" x="0.0" y="-4.666666666666667" width="341" height="583"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="eWJ-eM-4ac">
+                                            <rect key="frame" x="0.0" y="0.0" width="341" height="583"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="onboarding1" translatesAutoresizingMaskIntoConstraints="NO" id="hjh-tJ-qXG">
+                                                    <rect key="frame" x="41" y="20" width="260" height="157"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="260" id="2Gb-kU-omX"/>
+                                                        <constraint firstAttribute="width" constant="260" id="xjy-Ck-hmi"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hjh-tJ-qXG" firstAttribute="top" secondItem="eWJ-eM-4ac" secondAttribute="top" constant="20" id="gHq-zR-eGL"/>
+                                                <constraint firstItem="hjh-tJ-qXG" firstAttribute="centerX" secondItem="eWJ-eM-4ac" secondAttribute="centerX" id="k5V-Zr-i5Q"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="341" height="583"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3h-TA-WAA">
-                                <rect key="frame" x="306" y="68" width="55" height="35"/>
+                                <rect key="frame" x="297" y="72" width="55" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="DPb-hA-KeT"/>
                                     <constraint firstAttribute="width" constant="55" id="K2F-n0-Kdt"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Pular">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,13 +92,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ppO-6p-tVd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2lD-Aq-LYx"/>
+                            <constraint firstItem="ppO-6p-tVd" firstAttribute="top" secondItem="afp-Ge-iBa" secondAttribute="bottom" constant="20" id="5dd-ro-WGl"/>
                             <constraint firstItem="ppO-6p-tVd" firstAttribute="width" secondItem="gOo-tq-nue" secondAttribute="width" multiplier="1.12766" id="Ckp-U3-Efn"/>
+                            <constraint firstItem="afp-Ge-iBa" firstAttribute="top" secondItem="v3h-TA-WAA" secondAttribute="bottom" constant="20" id="EKS-Oe-jsZ"/>
                             <constraint firstItem="gOo-tq-nue" firstAttribute="height" secondItem="ppO-6p-tVd" secondAttribute="height" id="H5b-s2-MR5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="afp-Ge-iBa" secondAttribute="trailing" constant="20" id="IsL-me-qAY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gOo-tq-nue" secondAttribute="trailing" constant="20" id="Mkv-aV-peC"/>
                             <constraint firstItem="gOo-tq-nue" firstAttribute="bottom" secondItem="ppO-6p-tVd" secondAttribute="bottom" id="SGX-Lf-Wyj"/>
                             <constraint firstItem="gOo-tq-nue" firstAttribute="leading" secondItem="ppO-6p-tVd" secondAttribute="trailing" constant="20" id="U0s-0B-SA9"/>
                             <constraint firstItem="v3h-TA-WAA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="aBL-YB-U0j"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v3h-TA-WAA" secondAttribute="trailing" constant="20" id="abd-DC-KHQ"/>
+                            <constraint firstItem="afp-Ge-iBa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iR4-Cx-OK4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ppO-6p-tVd" secondAttribute="bottom" constant="40" id="p44-XW-mIs"/>
                         </constraints>
                     </view>
@@ -73,6 +113,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="onboarding1" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
