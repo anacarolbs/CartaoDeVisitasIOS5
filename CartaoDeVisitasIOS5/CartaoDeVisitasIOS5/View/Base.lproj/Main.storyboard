@@ -31,6 +31,9 @@
                                 <state key="normal" title="Cadastre-se">
                                     <color key="titleColor" name="SecondaryColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="signupButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hlA-Ex-knS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOo-tq-nue">
                                 <rect key="frame" x="205" y="728" width="156" height="50"/>
@@ -45,6 +48,9 @@
                                 <state key="normal" title="Entrar">
                                     <color key="titleColor" name="SecondaryColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6qV-Bz-DUo"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="afp-Ge-iBa">
                                 <rect key="frame" x="20" y="134" width="630" height="574"/>
@@ -110,6 +116,9 @@
                                 <state key="normal" title="Pular">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="skipButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZPf-kv-x2A"/>
+                                </connections>
                             </button>
                             <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="IkB-2b-Dcl">
                                 <rect key="frame" x="20" y="682" width="341" height="26"/>
@@ -140,6 +149,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="afp-Ge-iBa" id="xC2-zk-R1j"/>
                         <outlet property="loginButton" destination="gOo-tq-nue" id="ceD-Vl-2EI"/>
                         <outlet property="pageControl" destination="IkB-2b-Dcl" id="dWf-Qe-PaX"/>
                         <outlet property="signupButton" destination="ppO-6p-tVd" id="ExF-nc-PYX"/>
