@@ -35,6 +35,8 @@ class OnboardingViewController: UIViewController {
     
     // MARK: Action
     @IBAction func skipButtonAction(_ sender: UIButton) {
+        showItem(at: 2)
+        skipShow(true)
     }
     @IBAction func signupButtonAction(_ sender: UIButton) {
     }
@@ -52,6 +54,19 @@ class OnboardingViewController: UIViewController {
 extension OnboardingViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        signupButton.layer.cornerRadius = 12
+        loginButton.layer.cornerRadius = 12
+        loginButton.layer.borderWidth = 1
+        loginButton.layer.borderColor = #colorLiteral(red: 0.3249999881, green: 0.4269999862, blue: 0.9959999919, alpha: 1)
+        signupButton.isHidden = true
+        loginButton.isHidden = true
+        
+        pageControl.page = 0
+
     }
 }
 
@@ -80,10 +95,17 @@ extension OnboardingViewController {
 // MARK: -  UICollectionView Delegate and Datasources
 extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return titleArray.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnboardingCell", for: indexPath) as! OnboardingCell
+        
+        cell.onboardingWidthConstraint.constant = normalize(value: 260.0)
+        cell.onboardingImageView.image = imageArray[indexPath.row]
+        cell.headingLabel.text = titleArray[indexPath.row]
+        cell.subHeadingLabel.text = subtitleArray[indexPath.row]
+        
+        return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
@@ -104,10 +126,18 @@ extension UIPageControl {
             return currentPage
         } set {
             currentPage = newValue
-            setIndicatorImage(ImageHelper.pageSelected, forPage: newValue)
-            for index in 0..<numberOfPages where index != newValue { preferredIndicatorImage = ImageHelper.page
+
+            for index in 0..<numberOfPages where index != newValue {             setIndicatorImage(ImageHelper.page, forPage: index)
+
             }
+            
+            setIndicatorImage(ImageHelper.pageSelected, forPage: newValue)
+
         }
     }
 }
 
+func normalize(value: CGFloat) -> CGFloat {
+    let scale = UIScreen.main.bounds.width / 375.0
+    return value * scale
+}

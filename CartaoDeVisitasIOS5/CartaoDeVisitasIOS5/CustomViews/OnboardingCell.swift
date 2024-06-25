@@ -12,4 +12,7 @@ class OnboardingCell: UICollectionViewCell {
     @IBOutlet weak var onboardingImageView: UIImageView!
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var subHeadingLabel: UILabel!
+    @IBOutlet weak var onboardingWidthConstraint: NSLayoutConstraint!
+    
+    
 }

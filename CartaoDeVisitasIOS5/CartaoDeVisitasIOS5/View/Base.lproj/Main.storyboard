@@ -73,6 +73,7 @@
                                                     <rect key="frame" x="40.666666666666657" y="20" width="260" height="260"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="260" id="2Gb-kU-omX"/>
+                                                        <constraint firstAttribute="width" secondItem="hjh-tJ-qXG" secondAttribute="height" multiplier="1:1" id="F3S-rA-8QR"/>
                                                         <constraint firstAttribute="width" constant="260" id="xjy-Ck-hmi"/>
                                                     </constraints>
                                                 </imageView>
@@ -105,6 +106,7 @@
                                         <connections>
                                             <outlet property="headingLabel" destination="rXJ-iz-fgT" id="LOG-rG-OGz"/>
                                             <outlet property="onboardingImageView" destination="hjh-tJ-qXG" id="W6d-pD-0x8"/>
+                                            <outlet property="onboardingWidthConstraint" destination="xjy-Ck-hmi" id="V2j-26-dIZ"/>
                                             <outlet property="subHeadingLabel" destination="vhl-B7-1L3" id="2vT-sr-1rz"/>
                                         </connections>
                                     </collectionViewCell>
