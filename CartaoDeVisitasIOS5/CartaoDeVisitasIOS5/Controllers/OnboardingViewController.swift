@@ -41,6 +41,9 @@ class OnboardingViewController: UIViewController {
     @IBAction func loginButtonAction(_ sender: UIButton) {
     }
     
+    @IBAction func pageValueChanged(_ sender: Any) {
+        showItem(at: pageControl.currentPage)
+    }
     
     }
     
@@ -65,6 +68,13 @@ extension OnboardingViewController {
         signupButton.isHidden = bool
         loginButton.isHidden = bool
     }
+    
+    private func showItem(at index: Int) {
+        skipShow(index != 2)
+        pageControl.page = index
+        let indexPath = IndexPath(item: index, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: [.centeredHorizontally, .centeredVertically], animated: true)
+    }
 }
 
 // MARK: -  UICollectionView Delegate and Datasources
@@ -78,4 +88,26 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageWidht = scrollView.frame.size.width
+        let page = Int(floor((scrollView.contentOffset.x - pageWidht / 2) / pageWidht) + 1)
+        pageControl.page = page
+        
+        skipShow(page != 2)
+    }
 }
+
+extension UIPageControl {
+    var page: Int {
+        get {
+            return currentPage
+        } set {
+            currentPage = newValue
+            setIndicatorImage(ImageHelper.pageSelected, forPage: newValue)
+            for index in 0..<numberOfPages where index != newValue { preferredIndicatorImage = ImageHelper.page
+            }
+        }
+    }
+}
+

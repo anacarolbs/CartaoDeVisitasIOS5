@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8E6395462C28851500504E91 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6395452C28851500504E91 /* ImageHelper.swift */; };
+		8E6395492C2A007400504E91 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6395482C2A007400504E91 /* OnboardingCell.swift */; };
 		8ECE28522C227436004DE17F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE28512C227436004DE17F /* AppDelegate.swift */; };
 		8ECE28542C227436004DE17F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECE28532C227436004DE17F /* SceneDelegate.swift */; };
 		8ECE28592C227436004DE17F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8ECE28582C227436004DE17F /* Base */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		8E6395452C28851500504E91 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		8E6395482C2A007400504E91 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		8ECE284E2C227435004DE17F /* CartaoDeVisitasIOS5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CartaoDeVisitasIOS5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ECE28512C227436004DE17F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8ECE28532C227436004DE17F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		8E6395472C2A003900504E91 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				8E6395482C2A007400504E91 /* OnboardingCell.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		8ECE28452C227435004DE17F = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		8ECE28502C227435004DE17F /* CartaoDeVisitasIOS5 */ = {
 			isa = PBXGroup;
 			children = (
+				8E6395472C2A003900504E91 /* CustomViews */,
 				8E6395442C2884FC00504E91 /* Constants */,
 				8ECE28672C2277FD004DE17F /* View */,
 				8ECE28652C2277E8004DE17F /* Application */,
@@ -174,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ECE28522C227436004DE17F /* AppDelegate.swift in Sources */,
+				8E6395492C2A007400504E91 /* OnboardingCell.swift in Sources */,
 				8ECE28542C227436004DE17F /* SceneDelegate.swift in Sources */,
 				8ECE286A2C2278D2004DE17F /* OnboardingViewController.swift in Sources */,
 				8E6395462C28851500504E91 /* ImageHelper.swift in Sources */,
